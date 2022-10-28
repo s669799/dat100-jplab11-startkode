@@ -5,13 +5,20 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Blogg {
 
-	// TODO: objektvariable 
+	// TODO: objektvariable
+	private Innlegg[] tabell;
+	private int nesteledig;
 
 	public Blogg() {
+		tabell = new Innlegg[20];
+		nesteledig = 20;
+		
 		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
 	}
 
 	public Blogg(int lengde) {
+		tabell = new Innlegg[lengde];
+		nesteledig = 20;
 		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
 	}
 
@@ -25,8 +32,20 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		int pos = 0;
+		boolean funnet = false;
+		while (pos < nesteledig && !funnet) {
+			if (tabell[pos].getInnlegg() == innlegg) {
+				funnet = true;
+			} else {
+				pos++;
+			}
+		}
+		if (funnet) {
+			return pos;
+		} else {
+			return -1;
+		}
 	}
 
 	public boolean finnes(Innlegg innlegg) {
