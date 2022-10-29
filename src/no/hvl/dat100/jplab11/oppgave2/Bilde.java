@@ -5,27 +5,16 @@ import no.hvl.dat100.jplab11.common.TODO;
 public class Bilde extends Tekst {
 
 	// TODO - objekt variable
-	protected int id;
-	protected String bruker;
-	protected String dato;
-	protected int likes;
-	protected String tekst;
+	
 	protected String url;
 	
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		this.id = id;
-		this.bruker = bruker;
-		this.dato = dato;
-		this.tekst = tekst;
+		super (id, bruker, dato, tekst);
 		this.url = url;
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		this.id = id;
-		this.bruker = bruker;
-		this.dato = dato;
-		this.likes = likes;
-		this.tekst = tekst;
+		super (id, bruker, dato, likes, tekst);
 		this.url = url;
 	}
 	

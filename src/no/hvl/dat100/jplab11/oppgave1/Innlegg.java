@@ -65,14 +65,17 @@ public abstract class Innlegg {
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		boolean lik = false;
-		
-		if (innlegg == innlegg) {
-			lik = true;
-		} else {
-			lik = false;
+		if (innlegg == null) {
+			return false;
 		}
-		return lik;
+		if (!(innlegg instanceof Innlegg)) {
+			return false;
+		}
+		Innlegg a = (Innlegg) innlegg;
+		if (this.id != a.id) {
+			return false;
+		}
+		return true;
 	}
 	
 	@Override

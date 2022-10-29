@@ -6,10 +6,6 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 public class Tekst extends Innlegg {
 
 	// TODO: objektvariable 
-	protected int id;
-	protected String bruker;
-	protected String dato;
-	protected int likes;
 	protected String tekst;
 	
 	public Tekst () {
@@ -17,17 +13,12 @@ public class Tekst extends Innlegg {
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		this.id = id;
-		this.bruker = bruker;
-		this.dato = dato;
+		super (id, bruker, dato);
 		this.tekst = tekst;
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		this.id = id;
-		this.bruker = bruker;
-		this.dato = dato;
-		this.likes = likes;
+		super (id, bruker, dato, likes);
 		this.tekst = tekst;
 	}
 	
